@@ -1,3 +1,14 @@
+function isPerfectSquare(num: number) {
+  const sqrt = Math.sqrt(num);
+  return sqrt * sqrt === num;
+}
+
+function isPerfectCube(num: number) {
+  const cbrt = Math.cbrt(num);
+  return Math.round(cbrt) ** 3 === num;
+}
+
+
 export default function QueryProcessor(query: string): string {
   if (query.toLowerCase().includes("shakespeare")) {
     return (
@@ -15,6 +26,26 @@ export default function QueryProcessor(query: string): string {
   if (query.toLowerCase().includes("your name")) {
     return (
       "teamapi"
+    );
+  }
+
+  if (query.toLowerCase().includes("both a square and a cube")) {
+    const shortQuery = query.slice(0, -1)
+    const numbersPart = shortQuery.split(":"); 
+    const numbersOnly = numbersPart.pop()
+    let result: number[] = [];
+
+    if (numbersOnly) {
+      const numbers = numbersOnly.split(",")
+        .map(num => parseInt(num.trim(), 10)) 
+        .slice(-3);
+      
+      result = numbers.filter(num => isPerfectSquare(num) && isPerfectCube(num));
+
+
+    }
+    return (
+      String(result[0])
     );
   }
 

@@ -34,6 +34,14 @@ describe("QueryProcessor", () => {
           ));
     });
 
+    test('should return cube square num', () => {
+        const query = "both a square and a cube: 3375, 1649, 4404, 4225, 3905, 64, 4084?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "64"
+          ));
+    });
+
     test('should return largest num', () => {
         const query = "largest: 95, 69, 49?";
         const response: string = QueryProcessor(query);
