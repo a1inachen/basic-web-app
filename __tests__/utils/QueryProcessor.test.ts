@@ -65,4 +65,12 @@ describe("QueryProcessor", () => {
             "59"
           ));
     });
+
+    test('should return minus num', () => {
+        const query = "What is 75 minus 59?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "16"
+          ));
+    });
 });
