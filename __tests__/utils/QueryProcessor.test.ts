@@ -41,4 +41,20 @@ describe("QueryProcessor", () => {
             "94"
           ));
     });
+
+    test('should return mult num', () => {
+        const query = "What is 42 multiplied by 17?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "714"
+          ));
+    });
+
+    test('should return sum num', () => {
+        const query = "What is 42 plus 17?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "59"
+          ));
+    });
 });
