@@ -18,5 +18,31 @@ export default function QueryProcessor(query: string): string {
     );
   }
 
+  if (query.toLowerCase().includes("largest:")) {
+    const shortQuery = query.slice(0, -1)
+    const numbersPart = shortQuery.split(":"); 
+    console.log("numpart", numbersPart);
+    const numbersOnly = numbersPart.pop()
+    let max = -100000000;
+    if (numbersOnly) {
+      const numbers = numbersOnly.split(",")
+        .map(num => parseInt(num.trim(), 10)) 
+        .slice(-3); 
+        console.log("nums", numbers);
+
+      for (let i = 1; i < numbers.length; i++) {
+          if (numbers[i] > max) {
+              max = numbers[i];
+          }
+      }
+
+    }
+    
+  
+    return (
+      String(max)
+    );
+  }
+
   return "";
 }

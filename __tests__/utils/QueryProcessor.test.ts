@@ -33,4 +33,12 @@ describe("QueryProcessor", () => {
             "teamapi"
           ));
     });
+
+    test('should return largest num', () => {
+        const query = "largest: 28, 94, 47?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "94"
+          ));
+    });
 });
