@@ -48,10 +48,10 @@ export default function QueryProcessor(query: string): string {
         .map(num => parseInt(num.trim(), 10)) 
         .slice(-3); 
 
-      for (let i = 1; i < numbers.length; i++) {
-          if (numbers[i] > max) {
-              max = numbers[i];
-          }
+      for (let i = 0; i < numbers.length; i++) {
+        if (numbers[i] > max) {
+            max = numbers[i];
+        }
       }
 
     }

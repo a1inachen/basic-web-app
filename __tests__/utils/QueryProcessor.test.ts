@@ -35,10 +35,10 @@ describe("QueryProcessor", () => {
     });
 
     test('should return largest num', () => {
-        const query = "largest: 28, 94, 47?";
+        const query = "largest: 95, 69, 49?";
         const response: string = QueryProcessor(query);
         expect(response).toBe((
-            "94"
+            "95"
           ));
     });
 
