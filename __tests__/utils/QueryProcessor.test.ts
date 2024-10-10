@@ -43,10 +43,10 @@ describe("QueryProcessor", () => {
     });
 
     test('should return largest num', () => {
-        const query = "largest: 95, 69, 49?";
+        const query = "largest: 30, 6, 46?";
         const response: string = QueryProcessor(query);
         expect(response).toBe((
-            "95"
+            "46"
           ));
     });
 
@@ -71,6 +71,14 @@ describe("QueryProcessor", () => {
         const response: string = QueryProcessor(query);
         expect(response).toBe((
             "16"
+          ));
+    });
+
+    test('should return power num', () => {
+        const query = "What is 2 to the power of 3?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "8"
           ));
     });
 });

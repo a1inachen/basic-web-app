@@ -79,6 +79,16 @@ export default function QueryProcessor(query: string): string {
     );
   }
 
+  if (query.toLowerCase().includes("power of")) {
+    const shortQuery = query.slice(0, -1)
+    const numbersPart = shortQuery.split(" "); 
+    const num1 = parseInt(numbersPart[2], 10);
+    const num2 = parseInt(numbersPart[7], 10);
+    return (
+      String(num1 ** num2)
+    );
+  }
+
   if (query.toLowerCase().includes("largest:")) {
     const shortQuery = query.slice(0, -1)
     const numbersPart = shortQuery.split(":"); 
