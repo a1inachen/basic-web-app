@@ -30,7 +30,7 @@ describe("QueryProcessor", () => {
         const query = "your name";
         const response: string = QueryProcessor(query);
         expect(response).toBe((
-            "My name is teamapi"
+            "teamapi"
           ));
     });
 });
